@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv1vhs7cedu3w"]
+
+[ext_resource type="Texture2D" uid="uid://cu6lgudesbvjo" path="res://assets/sprites/basic_shapes/filled_triangle.png" id="1_px6ws"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="FilledTriangle" type="Sprite2D" parent="."]
+position = Vector2(565, 359)
+texture = ExtResource("1_px6ws")
