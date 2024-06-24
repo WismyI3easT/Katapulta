@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://de3qg8l41htft"]
+
+[ext_resource type="Texture2D" uid="uid://dt5h3e0e0q7yj" path="res://assets/sprites/basic_shapes/filled_circle.png" id="1_h4ik4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m37fr"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fgtr6"]
+radius = 30.0
+
+[node name="Orc" type="StaticBody2D" groups=["Enemy"]]
+
+[node name="Body" type="Sprite2D" parent="." groups=["Enemy"]]
+modulate = Color(3.56168e-06, 0.615319, 1.73271e-06, 1)
+texture = ExtResource("1_h4ik4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy"]]
+visible = false
+shape = SubResource("CircleShape2D_m37fr")
+
+[node name="Hurtbox" type="Area2D" parent="." groups=["Enemy"]]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_fgtr6")

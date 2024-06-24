@@ -11,10 +11,20 @@ config_version=5
 [application]
 
 config/name="Katapulta"
+run/main_scene="res://scenes/wismy_test.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
 
 [editor]
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.0862745, 0, 0, 1)

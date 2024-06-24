@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5085b831glna"]
+
+[ext_resource type="Script" path="res://scripts/test_wismy/turret_controller.gd" id="1_e4ngn"]
+[ext_resource type="Texture2D" uid="uid://b48khhk76mcrp" path="res://assets/sprites/basic_shapes/filled_square.png" id="2_m48qp"]
+[ext_resource type="Texture2D" uid="uid://cu6lgudesbvjo" path="res://assets/sprites/basic_shapes/filled_triangle.png" id="3_ctosy"]
+[ext_resource type="Texture2D" uid="uid://dt5h3e0e0q7yj" path="res://assets/sprites/basic_shapes/filled_circle.png" id="4_afgfv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhsdn"]
+size = Vector2(64, 64)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_42rwf"]
+radius = 500.0
+
+[node name="Turret" type="StaticBody2D" groups=["Turret"]]
+script = ExtResource("1_e4ngn")
+
+[node name="Base" type="Sprite2D" parent="." groups=["Turret"]]
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("2_m48qp")
+
+[node name="Cannon" type="Sprite2D" parent="." groups=["Turret"]]
+scale = Vector2(0.5, 1)
+texture = ExtResource("3_ctosy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Turret"]]
+visible = false
+shape = SubResource("RectangleShape2D_mhsdn")
+
+[node name="DetectionArea" type="Area2D" parent="." groups=["Turret"]]
+visible = false
+
+[node name="Range" type="CollisionShape2D" parent="DetectionArea" groups=["Turret"]]
+shape = SubResource("CircleShape2D_42rwf")
+
+[node name="_Area" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.0588235)
+scale = Vector2(16, 16)
+texture = ExtResource("4_afgfv")
+
+[connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
+[connection signal="area_exited" from="DetectionArea" to="." method="_on_detection_area_area_exited"]
