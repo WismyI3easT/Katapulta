@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5085b831glna"]
+[gd_scene load_steps=8 format=3 uid="uid://b5085b831glna"]
 
 [ext_resource type="Script" path="res://scripts/test_wismy/turret_controller.gd" id="1_e4ngn"]
 [ext_resource type="Texture2D" uid="uid://b48khhk76mcrp" path="res://assets/sprites/basic_shapes/filled_square.png" id="2_m48qp"]
 [ext_resource type="Texture2D" uid="uid://cu6lgudesbvjo" path="res://assets/sprites/basic_shapes/filled_triangle.png" id="3_ctosy"]
 [ext_resource type="Texture2D" uid="uid://dt5h3e0e0q7yj" path="res://assets/sprites/basic_shapes/filled_circle.png" id="4_afgfv"]
+[ext_resource type="Script" path="res://scripts/test_wismy/turret_stats_controller.gd" id="5_tptim"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhsdn"]
 size = Vector2(64, 64)
@@ -36,6 +37,9 @@ shape = SubResource("CircleShape2D_42rwf")
 modulate = Color(1, 1, 1, 0.0588235)
 scale = Vector2(16, 16)
 texture = ExtResource("4_afgfv")
+
+[node name="Stats" type="Node2D" parent="."]
+script = ExtResource("5_tptim")
 
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
 [connection signal="area_exited" from="DetectionArea" to="." method="_on_detection_area_area_exited"]
