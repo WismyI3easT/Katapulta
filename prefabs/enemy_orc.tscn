@@ -11,7 +11,7 @@ radius = 30.0
 script = ExtResource("1_37mp4")
 
 [node name="Body" type="Sprite2D" parent="." groups=["Enemy"]]
-modulate = Color(3.56168e-06, 0.615319, 1.73271e-06, 1)
+modulate = Color(0, 1, 0, 1)
 texture = ExtResource("2_gwix8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -20,5 +20,3 @@ shape = SubResource("CircleShape2D_fgtr6")
 
 [node name="Stats" type="Node2D" parent="."]
 script = ExtResource("3_rs3dn")
-health = null
-speed = null

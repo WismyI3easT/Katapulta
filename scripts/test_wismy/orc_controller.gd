@@ -9,6 +9,10 @@ func take_damage(damage):
 	print("---> ", stats.health, " to ", stats.health - damage)
 	stats.health -= damage
 
+	if stats.health > 0:
+		var color = Color(0, stats.health / 100.0, 0)
+		$Body.modulate = color
+
 	if stats.health <= 0:
 		self.die()
 
